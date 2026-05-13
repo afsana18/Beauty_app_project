@@ -1,0 +1,3001 @@
+{
+	"info": {
+		"_postman_id": "2b543395-872f-4107-94c3-c239d8ea0f3e",
+		"name": "BeautyBeauty",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Seller Registration",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"salon_name\": \"Barbar Shop\",\n    \"address\": \"mirpur 12, dhaka\",\n    \"phone\": \"01521321849\",\n    \"email\": \"haris.dipto@gmail.com\",\n    \"password\": \"12345678\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8010/api/seller/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"seller",
+								"register"
+							]
+						},
+						"description": "## All of the fields are required here."
+					},
+					"response": []
+				},
+				{
+					"name": "Seller Account Verification",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"haris.dipto@gmail.com\",\n    \"verification_code\": \"7113\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8010/api/account/verify",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"account",
+								"verify"
+							]
+						},
+						"description": "## Need to submit email and verification_code to verify seller account"
+					},
+					"response": []
+				},
+				{
+					"name": "Customer Registration",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_name\": \"Haris\",\n    \"last_name\": \"Dipto\",\n    \"password\": \"12345678\",\n    \"phone\": \"01521321845\",\n    \"email\": \"harish.dipto@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8010/api/customer/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"customer",
+								"register"
+							]
+						},
+						"description": "## Email field is optional, all the other fields are required"
+					},
+					"response": []
+				},
+				{
+					"name": "Customer Account Verification",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"phone\": \"01521321845\",\n    \"verification_code\": \"7608\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8010/api/account/verify",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"account",
+								"verify"
+							]
+						},
+						"description": "## Need to submit user phone number and verification_code to verify account"
+					},
+					"response": []
+				},
+				{
+					"name": "Seller Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"haris.dipto@gmail.com\",\n    \"password\": \"12345678\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8010/api/seller/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"seller",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Customer Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"phone\": \"01521321845\",\n    \"password\": \"1234567\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8010/api/customer/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"customer",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Seller Forget Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"haris.dipto@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8010/api/seller/password/reset/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"seller",
+								"password",
+								"reset",
+								""
+							]
+						},
+						"description": "## An email will sent to user email address"
+					},
+					"response": []
+				},
+				{
+					"name": "Seller Forget Password Reset",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"token\": \"bb274e2e623ba769a93587a108357\",\n    \"password\": \"Abcd1234#\",\n    \"password2\": \"Abcd1234#\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8010/api/seller/password/reset/confirm/?token=bb274e2e623ba769a93587a108357",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"seller",
+								"password",
+								"reset",
+								"confirm",
+								""
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "bb274e2e623ba769a93587a108357"
+								}
+							]
+						},
+						"description": "## To reset password, need to submit query parameter 'token' in the request body. So token should be passed from two places: from query parameter and from request body."
+					},
+					"response": []
+				},
+				{
+					"name": "Customer Forget Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"phone\": \"01521321849\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8010/api/customer/password/reset",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"customer",
+								"password",
+								"reset"
+							]
+						},
+						"description": "## An OTP will be sent to user phone"
+					},
+					"response": []
+				},
+				{
+					"name": "Customer Forget Password Reset",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"phone\": \"01521321845\",\n    \"verification_code\": \"3710\",\n    \"password\": \"1234567\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8010/api/customer/password/reset/confirm",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"customer",
+								"password",
+								"reset",
+								"confirm"
+							]
+						},
+						"description": "## Customer password reset is different. To reset password, need to submit these all: phone, verification_code and new password"
+					},
+					"response": []
+				},
+				{
+					"name": "Change Password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMCwidXNlcm5hbWUiOiJoYXJpcy5kaXB0b0BnbWFpbC5jb20iLCJleHAiOjE2MzgxNTQyNzQsImVtYWlsIjoiaGFyaXMuZGlwdG9AZ21haWwuY29tIn0.Jryx8c9folZ1hbSZvvG0o5UXzU1tWwExDadSE43RaAs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"old_password\": \"Abcd1234#\",\n    \"new_password\": \"12345678\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8010/api/password/change",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"password",
+								"change"
+							]
+						},
+						"description": "## Change password, user just need to submit old password and new password. User should be authenticated before changing password"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Seller Profile",
+			"item": [
+				{
+					"name": "Seller Profile Details",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8010/api/seller/profile/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"seller",
+								"profile",
+								"4"
+							]
+						},
+						"description": "## This is public endpoint to view a seller profile. No authentication is required here."
+					},
+					"response": []
+				},
+				{
+					"name": "Seller Home Page",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMCwidXNlcm5hbWUiOiJoYXJpcy5kaXB0b0BnbWFpbC5jb20iLCJleHAiOjE2MzczODM3ODcsImVtYWlsIjoiaGFyaXMuZGlwdG9AZ21haWwuY29tIn0.zqEeX1SKuQN7VQUZ-fDUHjBeyYwFUUdEP7I9fyxo71A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8010/api/seller/home",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"seller",
+								"home"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Seller Self Profile Details",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMCwidXNlcm5hbWUiOiJoYXJpcy5kaXB0b0BnbWFpbC5jb20iLCJleHAiOjE2MzkwMjU5ODYsImVtYWlsIjoiaGFyaXMuZGlwdG9AZ21haWwuY29tIn0.ZlKAejGef9Pd52Tggf9zwnZB-KcMb6TX09rN7F_xeFM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8010/api/seller/profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"seller",
+								"profile"
+							]
+						},
+						"description": "## When an authenticated seller want to view his profile, then need to use this endpoint"
+					},
+					"response": []
+				},
+				{
+					"name": "Seller Profile Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMCwidXNlcm5hbWUiOiJoYXJpcy5kaXB0b0BnbWFpbC5jb20iLCJleHAiOjE2MzkwMzE1NzksImVtYWlsIjoiaGFyaXMuZGlwdG9AZ21haWwuY29tIn0.Hht9-x2zhJV78N3e3aIw1ZjSLyLp1cB-NdbyKhQUnLo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "salon_name",
+									"value": "Super barbar ShoP",
+									"type": "text"
+								},
+								{
+									"key": "location",
+									"value": "https://www.google.com/maps/place/Well+Food/@23.828173,90.3620966,17z/data=!3m1!4b1!4m5!3m4!1s0x3755c13a1f910193:0xf1107eefac8c31ad!8m2!3d23.828173!4d90.3642906",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "Mirpur, Dhaka",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "01521321849",
+									"type": "text"
+								},
+								{
+									"key": "salon_description",
+									"value": "a nice barbar shop",
+									"type": "text"
+								},
+								{
+									"key": "working_hours",
+									"value": "{\"fri\": false, \"fri_start_hour\": \"09:00\", \"fri_end_hour\": \"10:00\", \"sat\": true, \"sat_start_hour\": \"09:00\", \"sat_end_hour\": \"10:00\", \"sun\": true, \"sun_start_hour\": \"09:00\", \"sun_end_hour\": \"10:00\", \"mon\": false, \"mon_start_hour\": \"08:00\", \"mon_end_hour\": \"10:00\", \"tue\": true, \"tue_start_hour\": \"09:00\", \"tue_end_hour\": \"10:00\", \"wed\": true, \"wed_start_hour\": \"09:00\", \"wed_end_hour\": \"10:00\", \"thr\": true, \"thr_start_hour\": \"09:00\", \"thr_end_hour\": \"10:00\"}",
+									"type": "text"
+								},
+								{
+									"key": "images[1]image",
+									"type": "file",
+									"src": "/home/hpdipto/Desktop/nature.jpeg"
+								},
+								{
+									"key": "images[2]image",
+									"type": "file",
+									"src": "/home/hpdipto/Desktop/dell.jpeg",
+									"disabled": true
+								},
+								{
+									"key": "images[3]image",
+									"type": "file",
+									"src": "/home/hpdipto/Desktop/dcp.jpg",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8010/api/seller/profile/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"seller",
+								"profile",
+								"update"
+							]
+						},
+						"description": "## Seller profile update endpoint\nTo update working hours, a JSON need to send in this format:\n```{\"fri\": false, \"fri_start_hour\": \"09:00\", \"fri_end_hour\": \"10:00\", \"sat\": true, \"sat_start_hour\": \"09:00\", \"sat_end_hour\": \"10:00\", \"sun\": true, \"sun_start_hour\": \"09:00\", \"sun_end_hour\": \"10:00\", \"mon\": false, \"mon_start_hour\": \"08:00\", \"mon_end_hour\": \"10:00\", \"tue\": true, \"tue_start_hour\": \"09:00\", \"tue_end_hour\": \"10:00\", \"wed\": true, \"wed_start_hour\": \"09:00\", \"wed_end_hour\": \"10:00\", \"thr\": true, \"thr_start_hour\": \"09:00\", \"thr_end_hour\": \"10:00\"}```\nHere ```\"fri\": false``` or ```\"fri\": true``` denotes whether Friday is open or not. And start_hour, end_hour is pretty self-descriptive.\n\nTo submit image, its necessary to pass image key in this format: ```images[index]image```. Index is incremental index number e.g.: 1, 2, 3 etc.\n\nPlease pass the google map location link in `location` field."
+					},
+					"response": []
+				},
+				{
+					"name": "Seller Profile Image Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMCwidXNlcm5hbWUiOiJoYXJpcy5kaXB0b0BnbWFpbC5jb20iLCJleHAiOjE2MzczODM3ODcsImVtYWlsIjoiaGFyaXMuZGlwdG9AZ21haWwuY29tIn0.zqEeX1SKuQN7VQUZ-fDUHjBeyYwFUUdEP7I9fyxo71A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8010/api/seller/profile/delete-image/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"seller",
+								"profile",
+								"delete-image",
+								"4"
+							]
+						},
+						"description": "## To delete seller profile image, need to pass the image id in the url. Image id can be found in the object of seller profile images array."
+					},
+					"response": []
+				},
+				{
+					"name": "Seller Authorized Profie View",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMCwidXNlcm5hbWUiOiJoYXJpcy5kaXB0b0BnbWFpbC5jb20iLCJleHAiOjE2MzczODQyMDEsImVtYWlsIjoiaGFyaXMuZGlwdG9AZ21haWwuY29tIn0.JfP2isyGLLjxNifSWpEqq12-O3bstjb9AWSyxv_B7iY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8010/api/seller/authorized-profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"seller",
+								"authorized-profile"
+							]
+						},
+						"description": "## Seller authorized profile view"
+					},
+					"response": []
+				},
+				{
+					"name": "Seller Authorize Profile Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMCwidXNlcm5hbWUiOiJoYXJpcy5kaXB0b0BnbWFpbC5jb20iLCJleHAiOjE2MzczODQyMDEsImVtYWlsIjoiaGFyaXMuZGlwdG9AZ21haWwuY29tIn0.JfP2isyGLLjxNifSWpEqq12-O3bstjb9AWSyxv_B7iY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"authorized_name\": \"Haris Pasha\",\n    \"authorized_nationality\": \"Bangladeshi\",\n    \"nid_no\": \"12345678\",\n    \"authorized_phone\": \"01521321849\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8010/api/seller/authorized-profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"seller",
+								"authorized-profile"
+							]
+						},
+						"description": "## Seller update authorized profile"
+					},
+					"response": []
+				},
+				{
+					"name": "Add Service",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMCwidXNlcm5hbWUiOiJoYXJpcy5kaXB0b0BnbWFpbC5jb20iLCJleHAiOjE2MzkwMjU5ODYsImVtYWlsIjoiaGFyaXMuZGlwdG9AZ21haWwuY29tIn0.ZlKAejGef9Pd52Tggf9zwnZB-KcMb6TX09rN7F_xeFM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "admin_provided_service",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "service_name",
+									"value": "Nail Treatment",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "modern Nail in budget",
+									"type": "text"
+								},
+								{
+									"key": "sub_services",
+									"value": "[{\"name\": \"sub service 1\", \"price\": 10}, {\"name\": \"sub service 2\", \"price\": 20}]",
+									"type": "text"
+								},
+								{
+									"key": "images[0]image",
+									"type": "file",
+									"src": "/home/hpdipto/Desktop/nature.jpeg"
+								},
+								{
+									"key": "images[1]image",
+									"type": "file",
+									"src": "/home/hpdipto/Desktop/dell.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8010/api/seller/service/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"seller",
+								"service",
+								"add"
+							]
+						},
+						"description": "## To create sub services, a JSON need to pass in this format:\n```[{\"name\": \"sub service 1\", \"price\": 10}, {\"name\": \"sub service 2\", \"price\": 20}]```. name and price should be define for each sub service.\nTo add image with sub service, image field should be as: ```images[index]image```, where index is the incremental value like: 1, 2, 3 etc."
+					},
+					"response": []
+				},
+				{
+					"name": "Service Details",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMCwidXNlcm5hbWUiOiJoYXJpcy5kaXB0b0BnbWFpbC5jb20iLCJleHAiOjE2MzczODQyNjksImVtYWlsIjoiaGFyaXMuZGlwdG9AZ21haWwuY29tIn0.03j0wycAE1Nh_DcXcN3qlNSl-Py2KvtlZmJoiQSxE8Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8010/api/seller/service/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"seller",
+								"service",
+								"2"
+							]
+						},
+						"description": "## To view the service details, need to pass service id in the endpoint."
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Service",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMCwidXNlcm5hbWUiOiJoYXJpcy5kaXB0b0BnbWFpbC5jb20iLCJleHAiOjE2MzczODQyNjksImVtYWlsIjoiaGFyaXMuZGlwdG9AZ21haWwuY29tIn0.03j0wycAE1Nh_DcXcN3qlNSl-Py2KvtlZmJoiQSxE8Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "service_name",
+									"value": "New Spa Treatment",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "new spa treatment is more advanced now",
+									"type": "text"
+								},
+								{
+									"key": "sub_services",
+									"value": "[{\"name\": \"sub service 1\", \"price\": 40}, {\"name\": \"sub service 2\", \"price\": 20},{\"name\": \"sub service 3\", \"price\": 30}]",
+									"type": "text"
+								},
+								{
+									"key": "images[0]image",
+									"type": "file",
+									"src": "/home/hpdipto/Desktop/dcp.jpg"
+								},
+								{
+									"key": "images[1]image",
+									"type": "file",
+									"src": "/home/hpdipto/Desktop/nature.jpeg",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8010/api/seller/service/update/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"seller",
+								"service",
+								"update",
+								"2"
+							]
+						},
+						"description": "## To edit sub_service, need to modify the JSON field. Please be careful, sub_service will be replaced by newly submitted JSON. So if its necessary to add or remove one sub service, previous sub services should also be inside the JSON.\n\n## Submitted images will be added with the service."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Service",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMCwidXNlcm5hbWUiOiJoYXJpcy5kaXB0b0BnbWFpbC5jb20iLCJleHAiOjE2MzczODQyNjksImVtYWlsIjoiaGFyaXMuZGlwdG9AZ21haWwuY29tIn0.03j0wycAE1Nh_DcXcN3qlNSl-Py2KvtlZmJoiQSxE8Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8010/api/seller/service/delete/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"seller",
+								"service",
+								"delete",
+								"2"
+							]
+						},
+						"description": "## To delete the service, need to pass the service id in the url."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Service Image",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMCwidXNlcm5hbWUiOiJoYXJpcy5kaXB0b0BnbWFpbC5jb20iLCJleHAiOjE2MzczODQyNjksImVtYWlsIjoiaGFyaXMuZGlwdG9AZ21haWwuY29tIn0.03j0wycAE1Nh_DcXcN3qlNSl-Py2KvtlZmJoiQSxE8Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8010/api/seller/service/delete-image/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"seller",
+								"service",
+								"delete-image",
+								"3"
+							]
+						},
+						"description": "## To delete the service image, need to pass the service image id, which can be found inside the object of service images array."
+					},
+					"response": []
+				},
+				{
+					"name": "Seller Service List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8010/api/seller/service/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"seller",
+								"service",
+								"list"
+							]
+						},
+						"description": "## It'll show a list of all available services in this platform."
+					},
+					"response": []
+				},
+				{
+					"name": "Seller Sub Service List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8010/api/seller/service/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"seller",
+								"service",
+								"2"
+							]
+						},
+						"description": "## It'll show a list of all available sub service in this platform.\n## Please provide the id of the service to view the list of sub services."
+					},
+					"response": []
+				},
+				{
+					"name": "Add Employee",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMCwidXNlcm5hbWUiOiJoYXJpcy5kaXB0b0BnbWFpbC5jb20iLCJleHAiOjE2MzczODQyNjksImVtYWlsIjoiaGFyaXMuZGlwdG9AZ21haWwuY29tIn0.03j0wycAE1Nh_DcXcN3qlNSl-Py2KvtlZmJoiQSxE8Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Asiya Talukdar",
+									"type": "text"
+								},
+								{
+									"key": "nationality",
+									"value": "Bangladeshi",
+									"type": "text"
+								},
+								{
+									"key": "years_of_experience",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/hpdipto/Desktop/nature.jpeg",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8010/api/seller/employee/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"seller",
+								"employee",
+								"add"
+							]
+						},
+						"description": "## All the fields are required here"
+					},
+					"response": []
+				},
+				{
+					"name": "Employee Details",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMCwidXNlcm5hbWUiOiJoYXJpcy5kaXB0b0BnbWFpbC5jb20iLCJleHAiOjE2MzczODQyNjksImVtYWlsIjoiaGFyaXMuZGlwdG9AZ21haWwuY29tIn0.03j0wycAE1Nh_DcXcN3qlNSl-Py2KvtlZmJoiQSxE8Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8010/api/seller/employee/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"seller",
+								"employee",
+								"3"
+							]
+						},
+						"description": "## To view the details of an employee, need to pass the employee id in the URL."
+					},
+					"response": []
+				},
+				{
+					"name": "Update Employee",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMCwidXNlcm5hbWUiOiJoYXJpcy5kaXB0b0BnbWFpbC5jb20iLCJleHAiOjE2MzczODQyNjksImVtYWlsIjoiaGFyaXMuZGlwdG9AZ21haWwuY29tIn0.03j0wycAE1Nh_DcXcN3qlNSl-Py2KvtlZmJoiQSxE8Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Alea Banu",
+									"type": "text"
+								},
+								{
+									"key": "nationality",
+									"value": "Saudi Arabian",
+									"type": "text"
+								},
+								{
+									"key": "speciality",
+									"value": "Nail Tratment",
+									"type": "text"
+								},
+								{
+									"key": "years_of_experience",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/hpdipto/Desktop/dell.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8010/api/seller/employee/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"seller",
+								"employee",
+								"3"
+							]
+						},
+						"description": "## To update the employee information, employee id is required in URL."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Employee",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMCwidXNlcm5hbWUiOiJoYXJpcy5kaXB0b0BnbWFpbC5jb20iLCJleHAiOjE2MzczODQyNjksImVtYWlsIjoiaGFyaXMuZGlwdG9AZ21haWwuY29tIn0.03j0wycAE1Nh_DcXcN3qlNSl-Py2KvtlZmJoiQSxE8Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8010/api/seller/employee/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"seller",
+								"employee",
+								"3"
+							]
+						},
+						"description": "## To delete the employee, employee id should be passed in the URL."
+					},
+					"response": []
+				},
+				{
+					"name": "Employee List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8010/api/seller/employee/all/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"seller",
+								"employee",
+								"all",
+								"4"
+							]
+						},
+						"description": "## To view the all employee list of a seller, the seller id should be passed in the URL."
+					},
+					"response": []
+				},
+				{
+					"name": "Seller Filter",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8010/api/seller/profile/filter?service=hair&rating=",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"seller",
+								"profile",
+								"filter"
+							],
+							"query": [
+								{
+									"key": "service",
+									"value": "hair"
+								},
+								{
+									"key": "rating",
+									"value": ""
+								},
+								{
+									"key": "name",
+									"value": "harir salon",
+									"disabled": true
+								}
+							]
+						},
+						"description": "## To filter seller profile, if user choose multiple service, service name should be passed as comma separated values. Also for multiple ratings, ratings should be passed as comma separated values."
+					},
+					"response": []
+				},
+				{
+					"name": "Seller Reviews",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8010/api/seller/reviews/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"seller",
+								"reviews",
+								"5"
+							]
+						},
+						"description": "## To view all the reviews of a seller, seller id should be passed in the URL."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Issue",
+			"item": [
+				{
+					"name": "Seller Issue List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8010/api/issue/issue-list?type=seller",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"issue",
+								"issue-list"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "seller"
+								}
+							]
+						},
+						"description": "## To view the seller issue list, ```type=seller``` should be passed in the URL query parameter."
+					},
+					"response": []
+				},
+				{
+					"name": "Seller Create Issue",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMCwidXNlcm5hbWUiOiJoYXJpcy5kaXB0b0BnbWFpbC5jb20iLCJleHAiOjE2MzczODQyNjksImVtYWlsIjoiaGFyaXMuZGlwdG9AZ21haWwuY29tIn0.03j0wycAE1Nh_DcXcN3qlNSl-Py2KvtlZmJoiQSxE8Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Didn't get payment\",\n    \"description\": \"bla bla description\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8010/api/issue/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"issue",
+								"add"
+							]
+						},
+						"description": "## To create an issue, title should be passed from issue list."
+					},
+					"response": []
+				},
+				{
+					"name": "Seller Track Issue",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMCwidXNlcm5hbWUiOiJoYXJpcy5kaXB0b0BnbWFpbC5jb20iLCJleHAiOjE2MzczODQyNjksImVtYWlsIjoiaGFyaXMuZGlwdG9AZ21haWwuY29tIn0.03j0wycAE1Nh_DcXcN3qlNSl-Py2KvtlZmJoiQSxE8Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8010/api/issue/track",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"issue",
+								"track"
+							]
+						},
+						"description": "## List of issues created by seller\n\nStatus value of the issue are as follow:\n<ul>\n<li>0 - Pending</li>\n<li>1 - Undergoing</li>\n<li>2 - Resolved</li>\n</ul>"
+					},
+					"response": []
+				},
+				{
+					"name": "Customer Issue List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNSwidXNlcm5hbWUiOiIiLCJleHAiOjE2MzM5NDc4NTgsImVtYWlsIjoiIn0.Pz1R7VlrE3KDxM0j-YDa7ZjXEeTb3PsuhYi8va1tr9Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8010/api/issue/issue-list?type=customer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"issue",
+								"issue-list"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "customer"
+								}
+							]
+						},
+						"description": "## Issue list for customer"
+					},
+					"response": []
+				},
+				{
+					"name": "Customer Create Issue",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNSwidXNlcm5hbWUiOiIiLCJleHAiOjE2MzM5NDc4NTgsImVtYWlsIjoiIn0.Pz1R7VlrE3KDxM0j-YDa7ZjXEeTb3PsuhYi8va1tr9Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Seller's behavior was rude\",\n    \"description\": \"bla bla description\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8010/api/issue/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"issue",
+								"add"
+							]
+						},
+						"description": "## To create an issue, title should be passed from issue list."
+					},
+					"response": []
+				},
+				{
+					"name": "Customer Track Issue",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8010/api/issue/track",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"issue",
+								"track"
+							]
+						},
+						"description": "## List of issues created by seller\n\nStatus value of the issue are as follow:\n<ul>\n<li>0 - Pending</li>\n<li>1 - Undergoing</li>\n<li>2 - Resolved</li>\n</ul>"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Coupons",
+			"item": [
+				{
+					"name": "All Coupons",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMCwidXNlcm5hbWUiOiJoYXJpcy5kaXB0b0BnbWFpbC5jb20iLCJleHAiOjE2MzczODQyNjksImVtYWlsIjoiaGFyaXMuZGlwdG9AZ21haWwuY29tIn0.03j0wycAE1Nh_DcXcN3qlNSl-Py2KvtlZmJoiQSxE8Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8010/api/seller/coupon/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"seller",
+								"coupon",
+								"all"
+							]
+						},
+						"description": "## All coupons of the authenticated seller"
+					},
+					"response": []
+				},
+				{
+					"name": "Add Coupon",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMCwidXNlcm5hbWUiOiJoYXJpcy5kaXB0b0BnbWFpbC5jb20iLCJleHAiOjE2MzczODQyNjksImVtYWlsIjoiaGFyaXMuZGlwdG9AZ21haWwuY29tIn0.03j0wycAE1Nh_DcXcN3qlNSl-Py2KvtlZmJoiQSxE8Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"coupon_code\": \"abcde\",\n    \"discount_amount\": 10,\n    \"start_date\": \"2021-09-01\",\n    \"end_date\": \"2021-12-30\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8010/api/seller/coupon/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"seller",
+								"coupon",
+								"add"
+							]
+						},
+						"description": "## All fields are required to create the coupon."
+					},
+					"response": []
+				},
+				{
+					"name": "Coupon Details",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMCwidXNlcm5hbWUiOiJoYXJpcy5kaXB0b0BnbWFpbC5jb20iLCJleHAiOjE2MzczODQyNjksImVtYWlsIjoiaGFyaXMuZGlwdG9AZ21haWwuY29tIn0.03j0wycAE1Nh_DcXcN3qlNSl-Py2KvtlZmJoiQSxE8Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8010/api/seller/coupon/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"seller",
+								"coupon",
+								"1"
+							]
+						},
+						"description": "## To view the details of the coupon, need to pass the coupon id in the URL."
+					},
+					"response": []
+				},
+				{
+					"name": "Update Coupon",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMCwidXNlcm5hbWUiOiJoYXJpcy5kaXB0b0BnbWFpbC5jb20iLCJleHAiOjE2MzczODQyNjksImVtYWlsIjoiaGFyaXMuZGlwdG9AZ21haWwuY29tIn0.03j0wycAE1Nh_DcXcN3qlNSl-Py2KvtlZmJoiQSxE8Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"coupon_code\": \"abcd\",\n    \"discount_amount\": 15,\n    \"start_date\": \"2021-09-15\",\n    \"end_date\": \"2021-09-30\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8010/api/seller/coupon/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"seller",
+								"coupon",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Coupon",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMCwidXNlcm5hbWUiOiJoYXJpcy5kaXB0b0BnbWFpbC5jb20iLCJleHAiOjE2MzczODQyNjksImVtYWlsIjoiaGFyaXMuZGlwdG9AZ21haWwuY29tIn0.03j0wycAE1Nh_DcXcN3qlNSl-Py2KvtlZmJoiQSxE8Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8010/api/seller/coupon/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"seller",
+								"coupon",
+								"1"
+							]
+						},
+						"description": "## To delete the coupon, need to pass the coupon id in the URL."
+					},
+					"response": []
+				},
+				{
+					"name": "Apply Coupon",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMSwidXNlcm5hbWUiOiJoYXJpc2guZGlwdG9AZ21haWwuY29tIiwiZXhwIjoxNjM3Mzg1MjQwLCJlbWFpbCI6ImhhcmlzaC5kaXB0b0BnbWFpbC5jb20ifQ.ZOwGmbKGryHu8GbBIZW_WidxJSns53VpH-2IEcpvk8A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"coupon_code\": \"abcde\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8010/api/seller/coupon/apply",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"seller",
+								"coupon",
+								"apply"
+							]
+						},
+						"description": "## To apply coupon, just need to pass the coupon code in request body. If there's any order in cart, coupon will be applied on that order. Only customer can apply coupon code."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "Customer Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMSwidXNlcm5hbWUiOiJoYXJpc2guZGlwdG9AZ21haWwuY29tIiwiZXhwIjoxNjM3NDQyOTk4LCJlbWFpbCI6ImhhcmlzaC5kaXB0b0BnbWFpbC5jb20ifQ.GhgDX1_cWl5lIoO19bVjHsQG1rFON3KFOoZ5BWiwldY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8010/api/customer/account/view",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"customer",
+								"account",
+								"view"
+							]
+						},
+						"description": "## Customer profile details"
+					},
+					"response": []
+				},
+				{
+					"name": "Customer Profile Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMSwidXNlcm5hbWUiOiJoYXJpc2guZGlwdG9AZ21haWwuY29tIiwiZXhwIjoxNjM3NDQyOTk4LCJlbWFpbCI6ImhhcmlzaC5kaXB0b0BnbWFpbC5jb20ifQ.GhgDX1_cWl5lIoO19bVjHsQG1rFON3KFOoZ5BWiwldY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "first_name",
+									"value": "HariS",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "DiptO",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "09887666",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "harish.dipto@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/hpdipto/Desktop/nature.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8010/api/customer/account/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"customer",
+								"account",
+								"update"
+							]
+						},
+						"description": "## Customer profile update. Only four fields are available for updating."
+					},
+					"response": []
+				},
+				{
+					"name": "Trending",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMSwidXNlcm5hbWUiOiJoYXJpc2guZGlwdG9AZ21haWwuY29tIiwiZXhwIjoxNjM3Mzg1MjQwLCJlbWFpbCI6ImhhcmlzaC5kaXB0b0BnbWFpbC5jb20ifQ.ZOwGmbKGryHu8GbBIZW_WidxJSns53VpH-2IEcpvk8A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8010/api/home/trending",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"home",
+								"trending"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upcoming Orders",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMSwidXNlcm5hbWUiOiJoYXJpc2guZGlwdG9AZ21haWwuY29tIiwiZXhwIjoxNjM3NDEwMTc3LCJlbWFpbCI6ImhhcmlzaC5kaXB0b0BnbWFpbC5jb20ifQ.MG48eYK7qRXzsoUWTNkxVx5Tlyj5S7kTrtXYPuRdHhc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8010/api/home/upcoming-order",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"home",
+								"upcoming-order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Top Rated Salon",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8010/api/home/top-rated",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"home",
+								"top-rated"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Newest Salon",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8010/api/home/newest",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"home",
+								"newest"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Service List for Cusomer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8010/api/seller/service/customer-list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"seller",
+								"service",
+								"customer-list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Near By Shops",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8010/api/customer/nearby-shops?latitude=23.8361918&longitude=90.3653906&service=",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"customer",
+								"nearby-shops"
+							],
+							"query": [
+								{
+									"key": "latitude",
+									"value": "23.8361918"
+								},
+								{
+									"key": "longitude",
+									"value": "90.3653906"
+								},
+								{
+									"key": "service",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cart",
+			"item": [
+				{
+					"name": "Add to Cart",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMSwidXNlcm5hbWUiOiJoYXJpc2guZGlwdG9AZ21haWwuY29tIiwiZXhwIjoxNjM3ODEyMTI4LCJlbWFpbCI6ImhhcmlzaC5kaXB0b0BnbWFpbC5jb20ifQ.ocHBEKIkDjdyu9m8gyXE0KC1QDVVmgckOPSTSyis73c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"service\": 4,\n    \"seller\": 4,\n    \"sub_services\": [\n        {\n            \"id\": \"4248b1a5-dcfc-4c54-9772-6e2eb908aeea\",\n            \"name\": \"sub service 2\",\n            \"price\": 20\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8010/api/order/cart/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"order",
+								"cart",
+								"add"
+							]
+						},
+						"description": "## To add a service (and its sub services), `service` id, `seller` id, and array of `sub_service` is required. Just need to pass the sub service as array of object in the request body."
+					},
+					"response": []
+				},
+				{
+					"name": "View Cart",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMSwidXNlcm5hbWUiOiJoYXJpc2guZGlwdG9AZ21haWwuY29tIiwiZXhwIjoxNjM3ODEyMTI4LCJlbWFpbCI6ImhhcmlzaC5kaXB0b0BnbWFpbC5jb20ifQ.ocHBEKIkDjdyu9m8gyXE0KC1QDVVmgckOPSTSyis73c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8010/api/order/cart",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"order",
+								"cart"
+							]
+						},
+						"description": "## Cart details of the authenticated customer. Which service is added can be found inside the `order_detials` attribute."
+					},
+					"response": []
+				},
+				{
+					"name": "Update Cart",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNSwidXNlcm5hbWUiOiIiLCJleHAiOjE2MzM5NDc4NTgsImVtYWlsIjoiIn0.Pz1R7VlrE3KDxM0j-YDa7ZjXEeTb3PsuhYi8va1tr9Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"sub_services\": []\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8010/api/order/cart/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"order",
+								"cart",
+								"add"
+							]
+						},
+						"description": "## To update the cart, need to pass the `order_id` and `sub_services` array. Please note that `sub_services` field will be overwritten by request body. So if one sub service is removed out of two, the remaining sub service should be passed as JSON object."
+					},
+					"response": []
+				},
+				{
+					"name": "Order Confirm",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMSwidXNlcm5hbWUiOiJoYXJpc2guZGlwdG9AZ21haWwuY29tIiwiZXhwIjoxNjM3Mzg1MjQwLCJlbWFpbCI6ImhhcmlzaC5kaXB0b0BnbWFpbC5jb20ifQ.ZOwGmbKGryHu8GbBIZW_WidxJSns53VpH-2IEcpvk8A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"note\": \"hello hello\",\n    \"order_datetime\": \"2021-09-29 09:39:00\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8010/api/order/confirm",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"order",
+								"confirm"
+							]
+						},
+						"description": "## To confirm the order, user need to pass an `order_datetime` and `note` is optional. As per Figma UI, available order date time list will comes from `Customer Get Reservation by Date` API."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "Customer Order List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMSwidXNlcm5hbWUiOiJoYXJpc2guZGlwdG9AZ21haWwuY29tIiwiZXhwIjoxNjM3Mzg1MjQwLCJlbWFpbCI6ImhhcmlzaC5kaXB0b0BnbWFpbC5jb20ifQ.ZOwGmbKGryHu8GbBIZW_WidxJSns53VpH-2IEcpvk8A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8010/api/order/list?type=all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"order",
+								"list"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "all"
+								}
+							]
+						},
+						"description": "## List of customer's all orders\n\nThe `type` parameter should contain the value as follow:\n<ul>\n<li>all</li>\n<li>pending</li>\n<li>showed up</li>\n<li>cancelled</li>\n</ul>\n\nThe default value for `type` should be `all`."
+					},
+					"response": []
+				},
+				{
+					"name": "Customer Order Details",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMSwidXNlcm5hbWUiOiJoYXJpc2guZGlwdG9AZ21haWwuY29tIiwiZXhwIjoxNjM3Mzg1MjQwLCJlbWFpbCI6ImhhcmlzaC5kaXB0b0BnbWFpbC5jb20ifQ.ZOwGmbKGryHu8GbBIZW_WidxJSns53VpH-2IEcpvk8A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8010/api/order/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"order",
+								"3"
+							]
+						},
+						"description": "## The details of an order. Need to pass order id in the URL."
+					},
+					"response": []
+				},
+				{
+					"name": "Customer Edit Order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNSwidXNlcm5hbWUiOiIiLCJleHAiOjE2MzM5NDc4NTgsImVtYWlsIjoiIn0.Pz1R7VlrE3KDxM0j-YDa7ZjXEeTb3PsuhYi8va1tr9Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"order_datetime\": \"2021-10-10 03:00:00\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8010/api/order/update/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"order",
+								"update",
+								"1"
+							]
+						},
+						"description": "## To edit the date time of an order, need to pass order id in the URL and `order_datetime` in request body."
+					},
+					"response": []
+				},
+				{
+					"name": "Seller Order List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMCwidXNlcm5hbWUiOiJoYXJpcy5kaXB0b0BnbWFpbC5jb20iLCJleHAiOjE2Mzc3Mzc5NDQsImVtYWlsIjoiaGFyaXMuZGlwdG9AZ21haWwuY29tIn0.j6Z7yPb_5woVcLlybY3oDiARs1b_XKFL9EU-1j3wxMc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8010/api/order/list?type=all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"order",
+								"list"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "all"
+								},
+								{
+									"key": "start_date",
+									"value": "2021-10-09",
+									"disabled": true
+								},
+								{
+									"key": "end_date",
+									"value": "2021-10-09",
+									"disabled": true
+								}
+							]
+						},
+						"description": "## List of seller's all order.\n\nThe `type` parameter should contain the value as follow:\n<ul>\n<li>all</li>\n<li>pending</li>\n<li>showed up</li>\n<li>cancelled</li>\n</ul>\n\nThe default value for `type` should be `all`."
+					},
+					"response": []
+				},
+				{
+					"name": "Seller Order Details",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMCwidXNlcm5hbWUiOiJoYXJpcy5kaXB0b0BnbWFpbC5jb20iLCJleHAiOjE2Mzc3Mzc5NDQsImVtYWlsIjoiaGFyaXMuZGlwdG9AZ21haWwuY29tIn0.j6Z7yPb_5woVcLlybY3oDiARs1b_XKFL9EU-1j3wxMc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8010/api/order/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"order",
+								"3"
+							]
+						},
+						"description": "## The details of an order for seller"
+					},
+					"response": []
+				},
+				{
+					"name": "Seller Edit Order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMSwidXNlcm5hbWUiOiJoYXJpcy5kaXB0b0BnbWFpbC5jb20iLCJleHAiOjE2MzM5NjEyMTAsImVtYWlsIjoiaGFyaXMuZGlwdG9AZ21haWwuY29tIn0.pmfObE6JMGtZ_-SNGTICCwf-w8HNZnmGFPY4CqCwYdc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"order_code\": \"76584\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8010/api/order/update/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"order",
+								"update",
+								"1"
+							]
+						},
+						"description": "## To stat an order, need to pass order id in URL and `order_code` to the request body."
+					},
+					"response": []
+				},
+				{
+					"name": "Customer Order History",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNSwidXNlcm5hbWUiOiIiLCJleHAiOjE2MzM5NDc4NTgsImVtYWlsIjoiIn0.Pz1R7VlrE3KDxM0j-YDa7ZjXEeTb3PsuhYi8va1tr9Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8010/api/order/list?type=history",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"order",
+								"list"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "history"
+								}
+							]
+						},
+						"description": "## Customer order history. To view the history need to pass `type=history` as URL query parameter."
+					},
+					"response": []
+				},
+				{
+					"name": "Seller Order History",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMCwidXNlcm5hbWUiOiJoYXJpcy5kaXB0b0BnbWFpbC5jb20iLCJleHAiOjE2Mzc3Mzc5NDQsImVtYWlsIjoiaGFyaXMuZGlwdG9AZ21haWwuY29tIn0.j6Z7yPb_5woVcLlybY3oDiARs1b_XKFL9EU-1j3wxMc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8010/api/order/list?type=history",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"order",
+								"list"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "history"
+								},
+								{
+									"key": "start_date",
+									"value": "2021-09-29",
+									"disabled": true
+								},
+								{
+									"key": "end_date",
+									"value": "2021-10-31",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Start Order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMSwidXNlcm5hbWUiOiJoYXJpcy5kaXB0b0BnbWFpbC5jb20iLCJleHAiOjE2MzM5NjEyMTAsImVtYWlsIjoiaGFyaXMuZGlwdG9AZ21haWwuY29tIn0.pmfObE6JMGtZ_-SNGTICCwf-w8HNZnmGFPY4CqCwYdc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"order_code\": \"76584\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8010/api/order/start",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"order",
+								"start"
+							]
+						},
+						"description": "## To start an order with order code, need to pass `order_code` in the request body."
+					},
+					"response": []
+				},
+				{
+					"name": "Mark Order As Complete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMSwidXNlcm5hbWUiOiJoYXJpcy5kaXB0b0BnbWFpbC5jb20iLCJleHAiOjE2MzM5NjEyMTAsImVtYWlsIjoiaGFyaXMuZGlwdG9AZ21haWwuY29tIn0.pmfObE6JMGtZ_-SNGTICCwf-w8HNZnmGFPY4CqCwYdc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"order_status\": 6\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8010/api/order/update/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"order",
+								"update",
+								"1"
+							]
+						},
+						"description": "## To mark an order as complete, need to pass order id in the URL and `order_status=6` is request body. Value 6 denotes a completed order."
+					},
+					"response": []
+				},
+				{
+					"name": "Create Review",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNSwidXNlcm5hbWUiOiIiLCJleHAiOjE2MzM5NDc4NTgsImVtYWlsIjoiIn0.Pz1R7VlrE3KDxM0j-YDa7ZjXEeTb3PsuhYi8va1tr9Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"rating\": 4,\n    \"review\": \"the service was nice\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8010/api/order/review/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"order",
+								"review",
+								"1"
+							]
+						},
+						"description": "## Customer can add review for a completed order. Need to pass order id in URL. `rating` field in request body is mandatory. `review` is optional."
+					},
+					"response": []
+				},
+				{
+					"name": "View Review",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNSwidXNlcm5hbWUiOiIiLCJleHAiOjE2MzM5NDc4NTgsImVtYWlsIjoiIn0.Pz1R7VlrE3KDxM0j-YDa7ZjXEeTb3PsuhYi8va1tr9Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"rating\": 4,\n    \"review\": \"the service was nice\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8010/api/order/review/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"order",
+								"review",
+								"1"
+							]
+						},
+						"description": "## Customer can view the review he gave for an order. To view that, need to pass order id in the URL."
+					},
+					"response": []
+				},
+				{
+					"name": "Update Review",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNSwidXNlcm5hbWUiOiIiLCJleHAiOjE2MzM5NDc4NTgsImVtYWlsIjoiIn0.Pz1R7VlrE3KDxM0j-YDa7ZjXEeTb3PsuhYi8va1tr9Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"rating\": 3,\n    \"review\": \"the service was not much nice\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8010/api/order/review/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"order",
+								"review",
+								"1"
+							]
+						},
+						"description": "## To update a review, _order id_ of the corresponding review should be passed in the URL."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Review",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNSwidXNlcm5hbWUiOiIiLCJleHAiOjE2MzM5NDc4NTgsImVtYWlsIjoiIn0.Pz1R7VlrE3KDxM0j-YDa7ZjXEeTb3PsuhYi8va1tr9Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8010/api/order/review/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"order",
+								"review",
+								"1"
+							]
+						},
+						"description": "## To delete the a review _order id_ of the corresponding review should be passed in the URL."
+					},
+					"response": []
+				},
+				{
+					"name": "Payment History",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMCwidXNlcm5hbWUiOiJoYXJpcy5kaXB0b0BnbWFpbC5jb20iLCJleHAiOjE2Mzc4MDk0MTcsImVtYWlsIjoiaGFyaXMuZGlwdG9AZ21haWwuY29tIn0.wwgNykPMbF_VrtGTQNAZSJz1oaO4AIpKItZxy-HVyrA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8010/api/order/payment-history",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"order",
+								"payment-history"
+							],
+							"query": [
+								{
+									"key": "start_date",
+									"value": "2021-11-01",
+									"disabled": true
+								},
+								{
+									"key": "end_date",
+									"value": "2021-11-23",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Payment Details",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMCwidXNlcm5hbWUiOiJoYXJpcy5kaXB0b0BnbWFpbC5jb20iLCJleHAiOjE2Mzc4MDk0MTcsImVtYWlsIjoiaGFyaXMuZGlwdG9AZ21haWwuY29tIn0.wwgNykPMbF_VrtGTQNAZSJz1oaO4AIpKItZxy-HVyrA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8010/api/order/payment/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"order",
+								"payment",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Favorites",
+			"item": [
+				{
+					"name": "Add Favorite",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNSwidXNlcm5hbWUiOiIiLCJleHAiOjE2MzM5NDc4NTgsImVtYWlsIjoiIn0.Pz1R7VlrE3KDxM0j-YDa7ZjXEeTb3PsuhYi8va1tr9Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"seller\": 5\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8010/api/seller/favorite/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"seller",
+								"favorite",
+								"add"
+							]
+						},
+						"description": "## To add a seller as favorite, need to pass `seller` id in the request body."
+					},
+					"response": []
+				},
+				{
+					"name": "Favorite List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNSwidXNlcm5hbWUiOiIiLCJleHAiOjE2MzM5NDc4NTgsImVtYWlsIjoiIn0.Pz1R7VlrE3KDxM0j-YDa7ZjXEeTb3PsuhYi8va1tr9Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8010/api/seller/favorite/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"seller",
+								"favorite",
+								"list"
+							]
+						},
+						"description": "## List of favorite sellers"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Favorite",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNSwidXNlcm5hbWUiOiIiLCJleHAiOjE2MzM5NDc4NTgsImVtYWlsIjoiIn0.Pz1R7VlrE3KDxM0j-YDa7ZjXEeTb3PsuhYi8va1tr9Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"seller\": 5\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8010/api/seller/favorite/remove",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"seller",
+								"favorite",
+								"remove"
+							]
+						},
+						"description": "## To delete a seller from favorite list, need to pass the `seller` id in request body."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reservation",
+			"item": [
+				{
+					"name": "Create Or Update Reservation",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMCwidXNlcm5hbWUiOiJoYXJpcy5kaXB0b0BnbWFpbC5jb20iLCJleHAiOjE2MzczODQyNjksImVtYWlsIjoiaGFyaXMuZGlwdG9AZ21haWwuY29tIn0.03j0wycAE1Nh_DcXcN3qlNSl-Py2KvtlZmJoiQSxE8Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"reservation_date\": \"2021-10-13\",\n    \"reservation_start_time\": \"10:00:00\",\n    \"reservation_end_time\": \"22:00:00\",\n    \"slots_per_hour\": 2,\n    \"apply_same_config\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8010/api/reservation/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"reservation",
+								"add"
+							]
+						},
+						"description": "## apply_same_config field is optional, it'll receive boolean value.\n\n## To edit the reservation of a particular day, just need to pass the same date and the reservation will be updated."
+					},
+					"response": []
+				},
+				{
+					"name": "Seller Get Reservation by Date",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMCwidXNlcm5hbWUiOiJoYXJpcy5kaXB0b0BnbWFpbC5jb20iLCJleHAiOjE2MzczODQyNjksImVtYWlsIjoiaGFyaXMuZGlwdG9AZ21haWwuY29tIn0.03j0wycAE1Nh_DcXcN3qlNSl-Py2KvtlZmJoiQSxE8Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8010/api/reservation/seller/view?reservation_date=2021-10-13",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"reservation",
+								"seller",
+								"view"
+							],
+							"query": [
+								{
+									"key": "reservation_date",
+									"value": "2021-10-13"
+								}
+							]
+						},
+						"description": "## For seller, to get the reservation details of a particular day, need to pass reservation_date as query parameter in the URL."
+					},
+					"response": []
+				},
+				{
+					"name": "Customer Get Reservation by Date",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMSwidXNlcm5hbWUiOiJoYXJpc2guZGlwdG9AZ21haWwuY29tIiwiZXhwIjoxNjM3Mzg1MjQwLCJlbWFpbCI6ImhhcmlzaC5kaXB0b0BnbWFpbC5jb20ifQ.ZOwGmbKGryHu8GbBIZW_WidxJSns53VpH-2IEcpvk8A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8010/api/reservation/customer/view?seller=4&reservation_date=2021-10-13",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"api",
+								"reservation",
+								"customer",
+								"view"
+							],
+							"query": [
+								{
+									"key": "seller",
+									"value": "4"
+								},
+								{
+									"key": "reservation_date",
+									"value": "2021-10-13"
+								}
+							]
+						},
+						"description": "## The reservation available time slot list of a seller. In URL, `seller` id and `reservation_date` should be passed to get the list of time slots."
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
