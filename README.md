@@ -1,4 +1,4 @@
-# Beauty_app_project
+
 # 💄 Beauty App Testing Project
 
 <p align="center">
